@@ -1,12 +1,22 @@
 {
   "name": "typescript-modules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publishing Node modules with TypeScript and ES modules",
-  "main": "index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepublishOnly": "npm run tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Hariom tiwari",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hari998/typescript-modules.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "typescript": "^5.0.4"
